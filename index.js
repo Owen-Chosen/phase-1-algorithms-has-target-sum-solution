@@ -1,14 +1,32 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let track = new Set()
+  for (const num of array) {
+    let complement = target - num
+    if (track.has(num)) return true
+    track.add (complement)
+  }
+  return false
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  Write the Big O time complexity of your function here:
+
+  time complexity = O(n)
 */
 
+
 /* 
-  Add your pseudocode here
+  Add your pseudocode here:
+
+  initialize an empty Set
+  iterate over the array of numbers
+    return true if the Set includes the complement
+  else
+    add complement to the set
+  return false if true isn't returned after the iteration
 */
+
 
 /*
   Add written explanation of your solution here
